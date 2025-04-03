@@ -1,0 +1,78 @@
+### ✅ 1. Test Server Status (Default Route)
+GET http://localhost:5000/api/unknown-route
+Content-Type: application/json
+
+### ✅ 2. Register a Doctor
+POST http://localhost:5000/api/doctors/register
+Content-Type: application/json
+
+{
+  "doctorID": "DOC123",
+  "name": "Dr. John Doe",
+  "specialization": "Cardiology",
+  "contactNumber": "9876543210",
+  "email": "dr.john@example.com",
+  "address": "123 Medical Street, Chennai",
+  "password": "securepassword"
+}
+
+### ✅ 3. Get All Doctors
+GET http://localhost:5000/api/doctors
+Content-Type: application/json
+
+### ✅ 4. Register OP Manager
+POST http://localhost:5000/api/op-managers/register
+Content-Type: application/json
+
+{
+  "name": "Admin User",
+  "email": "admin@example.com",
+  "password": "securepassword"
+}
+
+### ✅ 5. OP Manager Login (Get Token)
+POST http://localhost:5000/api/op-managers/login
+Content-Type: application/json
+
+{
+  "email": "ravikumar@example.com",
+  "password": "ravi123"
+}
+
+### ✅ 6. Book an Appointment (Requires Auth)
+POST http://localhost:5000/api/op-managers/book-appointment
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTRmNzFlOTlhMWE3YWY0MzYxMDkxYiIsInJvbGUiOiJvcE1hbmFnZXIiLCJpYXQiOjE3NDMxNDI2MzIsImV4cCI6MTc0MzE0NjIzMn0.lthE3n7Uti5-y3B5ckbkSen2Zr37Ca-evI5IumiN1mM
+Content-Type: application/json
+
+{
+  "patientID": "2ce79d7b-5da0-47dd-906b-0efee3c53928",
+  "doctorID": "543",
+  "department": "Cardiology",
+  "appointmentDate": "2025-03-28T10:00:00Z"
+}
+ 
+### ✅ 7. Get Doctor Appointments (Requires Auth)
+GET http://localhost:5000/api/doctors/appointments/543
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JJRCI6NTQzLCJlbWFpbCI6ImNhcHRhaW5AZ21haWwuY29tIiwicm9sZSI6ImRvY3RvciIsImlhdCI6MTc0MzE0MzI1MCwiZXhwIjoxNzQzMTQ2ODUwfQ.WFJWwlgERVG6PoahvJNE0sXPWiv3OYg2gjPYfMMCUsY
+Content-Type: application/json
+
+ 
+### ✅ 8. Fetch Patient Medical Records (Requires Auth)
+GET http://localhost:5000/api/doctors/patient-records/5a0613b3-5b80-41c0-b129-2bbfaf5b6b01
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JJRCI6IjU0MyIsImVtYWlsIjoiY2FwdGFpbkBnbWFpbC5jb20iLCJyb2xlIjoiZG9jdG9yIiwiaWF0IjoxNzQzMDkwNTQ1LCJleHAiOjE3NDMwOTQxNDV9.ngkhKrKVhp_RnQy_-shn1RmZrL-sFTaQSVcY6n1AZ0E
+Content-Type: application/json
+
+
+###
+POST http://localhost:5000/api/doctors/login
+Content-Type: application/json
+
+{
+    "email": "captain@gmail.com",
+    "password": "captain"
+}
+
+
+###
+GET http://localhost:5000/api/patient-fetch/details/2ce79d7b-5da0-47dd-906b-0efee3c53928
+

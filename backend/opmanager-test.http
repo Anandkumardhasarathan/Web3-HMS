@@ -1,0 +1,162 @@
+### 1️⃣ Register an OP Manager
+###
+POST http://localhost:5000/api/op-managers/register
+Content-Type: application/json
+
+{
+  "hospitalID": "HOSP001",
+  "name": "RaviKumar",
+  "phoneNumber": "+919876543211",
+  "email": "ravikumar@example.com", 
+  "password": "ravi123"
+}
+
+### 2️⃣ OP Manager Login
+POST http://localhost:5000/api/op-managers/login
+Content-Type: application/json
+
+{
+  "email": "ravikumar@example.com",
+  "password": "ravi123"
+}
+
+### 3️⃣ Fetch All OP Managers
+GET http://localhost:5000/api/op-managers/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGVkZWFmNmEwNTE5MjllMDczZWJlZCIsInJvbGUiOiJvcE1hbmFnZXIiLCJpYXQiOjE3NDI2NjExODcsImV4cCI6MTc0MjY2NDc4N30.6zVnSAbRR3PN_WD1qlIEXNGwFNISbIi-RJazezxStFY
+Accept: application/json
+
+
+### 4️⃣ Get OP Manager by ID
+GET http://localhost:5000/api/op-managers/OPM001
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZGVkZWFmNmEwNTE5MjllMDczZWJlZCIsInJvbGUiOiJvcE1hbmFnZXIiLCJpYXQiOjE3NDI2NjExODcsImV4cCI6MTc0MjY2NDc4N30.6zVnSAbRR3PN_WD1qlIEXNGwFNISbIi-RJazezxStFY
+Accept: application/json
+
+### 5️⃣ Update OP Manager Details
+PUT http://localhost:5000/api/op-managers/OPM001
+Content-Type: application/json
+
+{
+  "name": "Ravi K",
+  "phoneNumber": "+919876543222",
+  "email": "ravik@example.com"
+}
+
+### 6️⃣ Delete an OP Manager
+DELETE http://localhost:5000/api/op-managers/OPM001
+Accept: application/json
+
+
+
+
+### ✅ Register a New Patient
+POST http://localhost:5000/api/patients/register
+Content-Type: application/json
+Authorization: Bearer 0c1b7b11.6be27fe490184a7b97f6825a7b756873
+
+{
+  "hospitalID": "HOSPITAL23",
+  "name": "Karthi B",
+  "age": 32,
+  "gender": "Male",
+  "bloodGroup": "O+",
+  "address": "Karur, Tamil Nadu",
+  "phoneNumber": "++987654233",
+  "emergencyContact": "+918825626914",
+  "medicalConditions": ["Diabetes"],
+  "allergies": ["Penicillin"]
+}
+
+###
+POST http://localhost:5000/api/patients/register
+Content-Type: application/json
+
+{
+  "hospitalID": "HOSP123",
+  "name": "Anandha Kumar",
+  "age": 20,
+  "gender": "Male",
+  "bloodGroup": "O+",
+  "address": "Dharmapuri, Tamil Nadu",
+  "phoneNumber": "+919443586892"
+}
+
+
+
+//login testing
+
+### ✅ 1. OP Manager Login (Get JWT Token)
+POST http://localhost:5000/api/op-managers/login
+Content-Type: application/json
+
+{
+    "email": "opmanager@example.com",
+    "password": "yourpassword"
+}
+
+### ✅ 2. Get OP Manager Profile (Use Token from Login)
+GET http://localhost:5000/api/op-managers/profile
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+### ✅ 3. Update OP Manager Profile
+PUT http://localhost:5000/api/op-managers/update-profile
+Content-Type: application/json
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+{
+    "name": "Updated OP Manager",
+    "phoneNumber": "9876543210"
+}
+
+### ✅ 4. Book an OP Appointment
+POST http://localhost:5000/api/op-managers/book-appointment
+Content-Type: application/json
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+{
+    "patientID": "P123456",
+    "doctorID": "D98765",
+    "department": "Cardiology",
+    "appointmentDate": "2025-03-25T10:00:00.000Z"
+}
+
+###
+GET http://localhost:5000/api/patient-fetch/patient/2
+
+
+### ✅ Test Booking an Appointment
+POST http://localhost:5000/api/appointments/book
+Content-Type: application/json
+
+{
+  "patientID": "2",  
+  "doctorID": "DOC123",  
+  "department": "General Medicine",  
+  "appointmentDate": "2025-03-28"
+}
+
+###
+POST http://localhost:5000/api/op-managers/book-appointment
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTRmNzFlOTlhMWE3YWY0MzYxMDkxYiIsInJvbGUiOiJvcE1hbmFnZXIiLCJpYXQiOjE3NDMwNjY3MDIsImV4cCI6MTc0MzA3MDMwMn0.l-20XlJZ3ghbyMAhmrWgKzG4Cl81nXzm9D-w2g7gGNw
+{
+  "patientID": "5a0613b3-5b80-41c0-b129-2bbfaf5b6b01",
+  "doctorID": "123",
+  "department": "Neurology",
+  "appointmentDate": "2025-03-28"
+}
+
+### ✅ Test Fetching a Patient by NFT Token
+GET http://localhost:5000/api/patient-fetch/patient/2
+Content-Type: application/json
+
+
+
+
+### 1️⃣ OP Manager Login (Get JWT Token)
+POST http://localhost:5000/api/op-managers/login
+Content-Type: application/json
+
+{
+  "email": "opmanager@example.com",
+  "password": "yourpassword"
+}
