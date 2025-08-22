@@ -75,13 +75,9 @@ function AppLayout() {
 
   return (
     <div className="app-container flex">
-      {/* {!hideNavbarSidebar && <Navbar />}
-      {!hideNavbarSidebar && <Sidebar />} */}
-
       <div className="flex-1">
         <div className="p-6">
           <Routes>
-            {/* <Route path="/" element={<OPManagerLogin />} /> */}
             <Route path="/opmanager-login" element={<OPManagerLogin />} />
             <Route path="/" element={<MainDashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />

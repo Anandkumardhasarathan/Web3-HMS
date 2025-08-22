@@ -19,8 +19,8 @@
     align-items: center;
     justify-content: center;
     height: 500vh;
-    background-color: #121212; /* Dark background color */
-    color: #ffffff; /* Text color */
+    background-color: #121212; 
+    color: #ffffff;
   }
 
   .about-content {
