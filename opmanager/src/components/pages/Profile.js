@@ -8,19 +8,6 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const [alert, setAlert] = useState({ open: false, message: "", severity: "success" });
 
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const data = await getProfile();
-  //       setProfile(data);
-  //     } catch (error) {
-  //       setAlert({ open: true, message: "Failed to load profile", severity: "error" });
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   })();
-  // }, []);
-
   const handleChange = (e) => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };

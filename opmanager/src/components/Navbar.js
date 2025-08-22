@@ -14,7 +14,6 @@ const Navbar = () => {
     setDrawerOpen(open);
   };
 
-  // ✅ Logout Function
   const handleLogout = () => {
     sessionStorage.removeItem("authToken");
     sessionStorage.removeItem("opManager");
@@ -34,12 +33,10 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between", minHeight: "56px", px: 2 }}>
-          {/* Mobile Menu Button */}
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)} sx={{ display: { md: "none" } }}>
             <MenuIcon sx={{ fontSize: "22px" }} />
           </IconButton>
 
-          {/* Brand Logo (Fixed Alignment) */}
           <Typography 
             variant="h6" 
             sx={{ 
@@ -47,13 +44,12 @@ const Navbar = () => {
               fontSize: "15px", 
               letterSpacing: "0.5px", 
               color: "#222",
-              ml: { xs: 2, md: 6 } , // 🔥 Fix: Added left margin
+              ml: { xs: 2, md: 6 } , 
             }}
           >
             🏥 OP Manager
           </Typography>
 
-          {/* Desktop Navigation */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: "30px", alignItems: "center" }}>
             {navLinks.map((item, index) => (
               <motion.div 
@@ -80,7 +76,6 @@ const Navbar = () => {
               </motion.div>
             ))}
 
-            {/* ✅ Logout Button (Text Only, Red Color) */}
             <ListItem 
               onClick={handleLogout} 
               sx={{ 
@@ -99,7 +94,6 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 230, p: 2, background: "#F9F9F9", height: "100vh" }}>
           <Typography variant="h6" fontWeight="bold" textAlign="center" mb={2} sx={{ fontSize: "13px", color: "#444" }}>
@@ -119,7 +113,7 @@ const Navbar = () => {
                   color: location.pathname === item.path ? "#0D47A1" : "#333",
                   fontWeight: "500",
                   fontSize: "12px",
-                  py: 1.5,  // Adds vertical spacing
+                  py: 1.5,  
                   "&:hover": { backgroundColor: "#E3F2FD" }
                 }}
               >
@@ -130,7 +124,6 @@ const Navbar = () => {
 
             <Divider sx={{ my: 2 }} />
 
-            {/* ✅ Logout Button (For Mobile Menu) */}
             <ListItem button onClick={handleLogout} sx={{ color: "red", fontWeight: "bold", fontSize: "12px", py: 1.5 }}>
               <Logout />
               <ListItemText primary="Logout" sx={{ ml: 0.8 }} />
@@ -142,7 +135,6 @@ const Navbar = () => {
   );
 };
 
-// Navigation Links (Dashboard Removed)
 const navLinks = [
   { label: "Book Appointment", path: "/book-appointment", icon: <Event sx={{ fontSize: "16px", color: "#43A047" }} /> },
   { label: "Profile", path: "/profile", icon: <Person sx={{ fontSize: "16px", color: "#E65100" }} /> },

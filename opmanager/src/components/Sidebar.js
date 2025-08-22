@@ -21,7 +21,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Menu Button for Mobile */}
       <IconButton onClick={toggleDrawer(true)} sx={{ position: "fixed", top: 15, left: 15, zIndex: 1300, color: "black" }}>
         <Menu fontSize="large" />
       </IconButton>
