@@ -8,7 +8,7 @@ const contractAddress = "0xYourContractAddress";
 const checkNFTOwnership = async (walletAddress) => {
   const contract = new ethers.Contract(contractAddress, contractABI, provider);
   const balance = await contract.balanceOf(walletAddress);
-  return balance > 0; // Returns true if patient owns an NFT
+  return balance > 0;
 };
 
 module.exports = { checkNFTOwnership };

@@ -1,6 +1,6 @@
 const Appointment = require("../models/appointmentModel");
 const Patient = require("../models/patientModel");
-const { notifyDoctor } = require("../sockets/socketHandler"); // ✅ Import WebSocket Notifier
+const { notifyDoctor } = require("../sockets/socketHandler");
 
 // ✅ Book an Appointment
 const bookAppointment = async (req, res) => {

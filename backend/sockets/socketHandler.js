@@ -30,7 +30,7 @@
 // module.exports = { setupSocket, notifyDoctor };
 
 
-const io = require("../server").io; // ✅ Ensure io instance is correctly imported
+const io = require("../server").io; 
 
 // ✅ Notify Doctor about new appointment
 const notifyDoctor = (doctorID, appointment) => {
