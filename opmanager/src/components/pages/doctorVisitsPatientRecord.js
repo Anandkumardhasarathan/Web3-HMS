@@ -62,8 +62,8 @@
 // };
 
 // export default DoctorVisitPatientRecord;
-
 import React from "react";
+
 import { Card, CardContent, Typography, Grid, Paper, Box, Divider } from "@mui/material";
 
 const DoctorVisitPatientRecords = () => {

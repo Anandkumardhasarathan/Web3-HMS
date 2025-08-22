@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // For Navigation
+import { useNavigate } from "react-router-dom";
 import { bookAppointment } from "../../components/utils/api";
 import { TextField, Button, Container, Typography, MenuItem, Snackbar, Alert, Paper, Box } from "@mui/material";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ const BookAppointment = () => {
   const [form, setForm] = useState({ patientID: "", doctorID: "", department: "", appointmentDate: "" });
   const [alert, setAlert] = useState({ open: false, message: "", severity: "success" });
 
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,9 +22,8 @@ const BookAppointment = () => {
       const response = await bookAppointment(form);
       setAlert({ open: true, message: response.message, severity: "success" });
 
-      // Redirect to OP Manager Dashboard after success
       setTimeout(() => {
-        navigate("/dashboard"); // Update with the correct OP Manager Dashboard route
+        navigate("/dashboard"); 
       }, 2000);
     } catch (error) {
       setAlert({ open: true, message: "Failed to book appointment", severity: "error" });
@@ -38,7 +37,6 @@ const BookAppointment = () => {
           📅 Book an Appointment
         </Typography>
 
-        {/* Glassmorphism Styled Form */}
         <Paper
           elevation={3}
           sx={{
@@ -98,9 +96,7 @@ const BookAppointment = () => {
               sx={{ bgcolor: "rgba(255,255,255,0.3)", borderRadius: "8px" }}
             />
 
-            {/* Buttons */}
             <Box display="flex" flexDirection="column" gap={2} mt={3}>
-              {/* Confirm Appointment Button */}
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Button
                   type="submit"
@@ -117,7 +113,6 @@ const BookAppointment = () => {
                 </Button>
               </motion.div>
 
-              {/* Back to Dashboard Button */}
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Button
                   variant="outlined"

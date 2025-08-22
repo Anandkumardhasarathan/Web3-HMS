@@ -15,16 +15,14 @@ const stats = [
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  // ✅ Check authentication when component mounts
   useEffect(() => {
     const authToken = sessionStorage.getItem("authToken");
 
     if (!authToken) {
-      // If user is not logged in, redirect to login page
+      
       navigate("/opmanager-login");
     }
 
-    // ✅ Prevent back button from logging out
     const handleBackButton = (event) => {
       event.preventDefault();
       window.history.pushState(null, null, window.location.pathname);

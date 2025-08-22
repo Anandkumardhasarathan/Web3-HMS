@@ -8,7 +8,6 @@ const PatientDetails = () => {
   const [patientID, setPatientID] = useState("");
   const [patient, setPatient] = useState(null);
 
-  // ✅ Fetch Patient Data
   const handleSearch = async () => {
     if (!patientID) return;
     const data = await getPatientDetails(patientID);

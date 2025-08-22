@@ -129,7 +129,6 @@ const OPManagerLogin = () => {
           </form>
         </Paper>
 
-        {/* Success/Error Snackbar */}
         <Snackbar open={alert.open} autoHideDuration={4000} onClose={() => setAlert({ ...alert, open: false })}>
           <Alert onClose={() => setAlert({ ...alert, open: false })} severity={alert.severity} variant="filled">
             {alert.message}
